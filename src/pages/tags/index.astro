@@ -1,0 +1,19 @@
+---
+import BaseLayout from "../../layouts/BaseLayout.astro";
+import { getUniqueTags } from "./[tag].astro";
+---
+
+<BaseLayout pageTitle="Tags Directory">
+    <main>
+        <article>
+            <h2>Tag Directory</h2>
+            <ul>
+                {
+                    getUniqueTags().map((t) => (
+                        <li><a href={`./tags/${t}`}>{t}</a></li>
+                    ))
+                }
+            </ul>
+        </article>
+    </main>
+</BaseLayout>
