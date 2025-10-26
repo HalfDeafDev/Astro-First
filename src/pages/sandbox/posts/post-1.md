@@ -1,5 +1,5 @@
 ---
-layout: ../../layouts/MarkdownPostLayout.astro
+layout: tutorial/layouts/MarkdownPostLayout.astro
 title: 'The First Blog Post'
 pubDate: 2025-10-20
 description: 'A learning project for Astro and eventually Netlify'
