@@ -1,5 +1,6 @@
 ---
 import 'styles/global.css';
+import Navigation from 'components/Navigation.astro';
 
 let { pageTitle } = Astro.props;
 ---
@@ -14,6 +15,9 @@ let { pageTitle } = Astro.props;
 		<title>{pageTitle}</title>
 	</head>
 	<body>
-		<slot />
+		<Navigation />
+		<main>
+			<slot />
+		</main>
 	</body>
 </html>

@@ -1,0 +1,30 @@
+---
+import { undefined } from "astro:schema";
+import MainLayout from "./MainLayout.astro";
+
+let { frontmatter } = Astro.props;
+let { projectName, projectUrl, description, technologies } = frontmatter;
+---
+
+<MainLayout pageTitle = {`Projects | ${projectName}`}>
+    <article>
+        <h1>{projectName}</h1>
+        <section>
+            <a href={`${projectUrl}`}>Source</a>
+            {
+                technologies === undefined ? '' :
+                (
+                    <ul>
+                        {
+                            technologies.map((t : string) => (<li>{t}</li>))
+                        }
+                    </ul>
+                )
+            }
+            <p class="project-description">{description}</p>
+        </section>
+        <section>
+            <slot />
+        </section>
+    </article>
+</MainLayout>

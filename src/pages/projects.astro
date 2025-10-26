@@ -1,0 +1,16 @@
+---
+import MainLayout from "layouts/MainLayout.astro";
+
+const projectPages = Object.values(import.meta.glob('./projects/*/*.md', { eager: true }));
+---
+
+<MainLayout pageTitle="Projects">
+    {
+        projectPages.map((p : any) => (
+        <li>
+            <a href={p.url}>
+                {p.frontmatter.projectName}
+            </a>
+        </li>))
+    }
+</MainLayout>
